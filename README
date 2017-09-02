@@ -1,0 +1,15 @@
+This is a nagios check for SSLLabs, which is still a lot of work in progress.
+
+Requirements:
+
+- python 3.x
+- python3-requests
+
+Todo:
+
+- Nice up code (make things more logic)
+
+Annoying stuff:
+
+- The check is dependent on SSLLabs, so the check can take up to 12 minutes (timed), and Nagios doesnt like that ;-)
+
