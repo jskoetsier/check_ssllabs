@@ -9,7 +9,12 @@ Todo:
 
 - Nice up code (make things more logic)
 
-Annoying stuff:
+Howto:
 
-- The check is dependent on SSLLabs, so the check can take up to 12 minutes (timed), and Nagios doesnt like that ;-)
+- There are 2 scripts, these need to run independently (i run it in a jenkins job) because the script timeout from nagios is a logic 60 seconds. So it needs to be ran asynchrone.
 
+check_ssllabs_api.py: actually checks the API from Quallys, and writes it's output in /var/spool/ssllabs/<fqdn>.dat
+
+check_ssllabs.py: checks the result from /var/spool/ssllabs/<fqdn>.dat
+
+You could you nrpe to run this check remotely from your nagios instance.
