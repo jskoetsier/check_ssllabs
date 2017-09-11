@@ -78,8 +78,8 @@ def main():
     if args.host != '':
         if os.path.isfile("/var/spool/ssllabs/"+host+".dat"):
             os.remove("/var/spool/ssllabs/"+host+".dat")
-            repose=newScan(host)
-            pickle.dump(response, open("/var/spool/ssllabs/"+host+".dat", "wb"))
+            response2=newScan(host)
+            pickle.dump(response2, open("/var/spool/ssllabs/"+host+".dat", "wb"))
             sys.exit(0)
         else:
             response=newScan(host)
